@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Homework</string>
+    <string name="main_profile">Profile</string>
+    <string name="main_namehint">Username</string>
+    <string name="main_emailhint">Email</string>
+    <string name="main_phonehint">Phone number</string>
+    <string name="main_button_edit">Edit profile</string>
+    <string name="edit_title">Editing a profile</string>
+    <string name="edit_name">Enter a name</string>
+    <string name="edit_email">Enter a email</string>
+    <string name="edit_phone">Enter a phone number</string>
+    <string name="edit_save">Save</string>
+    <string name="edit_reset">Reset</string>
+    <string name="edit_cancel">Cancel</string>
+    <string name="main_name">Name:</string>
+    <string name="main_email">Email:</string>
+    <string name="main_phone">Phone:</string>
+    <string name="main_send_name">Send name</string>
+
 </resources>
