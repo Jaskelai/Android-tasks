@@ -13,15 +13,16 @@ import android.widget.TextView;
 
 
 public class EditActivity extends AppCompatActivity implements View.OnClickListener {
+
+    final static String NAME = "name";
+    final static String EMAIL = "email";
+    final static String PHONE = "phone";
     private EditText editName;
     private EditText editEmail;
     private EditText editPhone;
     private TextView textName;
     private TextView textEmail;
     private TextView textPhone;
-    final static String NAME = "name";
-    final static String EMAIL = "email";
-    final static String PHONE = "phone";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +71,8 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
         String alertDescription = "you will lose your data if you continue!";
         String positiveButton = "Yes";
         String negativeButton = "No";
-        AlertDialog.Builder ad = new AlertDialog.Builder(EditActivity.this, android.R.style.Theme_Material_Dialog_Alert);
+        AlertDialog.Builder ad = new AlertDialog.Builder(EditActivity.this,
+                android.R.style.Theme_Material_Dialog_Alert);
         ad.setTitle(alert);
         ad.setMessage(alertDescription);
         ad.setPositiveButton(positiveButton, new DialogInterface.OnClickListener() {

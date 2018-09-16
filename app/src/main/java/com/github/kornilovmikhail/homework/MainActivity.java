@@ -35,7 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.button_main_edit:
                 Intent intentEdit = new Intent(view.getContext(), EditActivity.class);
-                if (textName.getText() != null && textEmail.getText() != null && textPhone.getText() != null) {
+                if (textName.getText() != null && textEmail.getText() != null &&
+                        textPhone.getText() != null) {
                     intentEdit.putExtra(EditActivity.NAME, textName.getText());
                     intentEdit.putExtra(EditActivity.EMAIL, textEmail.getText());
                     intentEdit.putExtra(EditActivity.PHONE, textPhone.getText());
