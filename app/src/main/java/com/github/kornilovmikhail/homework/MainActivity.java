@@ -11,8 +11,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    static final int PICK_INFO_REQUEST = 1;
-    static final int PICK_RESULT_SENDING_REQUEST = 0;
+    private final int PICK_INFO_REQUEST = 1;
+    private final int PICK_RESULT_SENDING_REQUEST = 0;
     private TextView textName;
     private TextView textEmail;
     private TextView textPhone;
@@ -21,20 +21,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textName = findViewById(R.id.textview_main_name);
-        textEmail = findViewById(R.id.textview_main_email);
-        textPhone = findViewById(R.id.textView_main_phone);
-        Button editButton = findViewById(R.id.button_main_edit);
+        textName = findViewById(R.id.tv_main_name);
+        textEmail = findViewById(R.id.tv_main_email);
+        textPhone = findViewById(R.id.tv_main_phone);
+        Button editButton = findViewById(R.id.btn_main_edit);
         editButton.setOnClickListener(this);
-        Button sendButton = findViewById(R.id.button_main_send_name);
+        Button sendButton = findViewById(R.id.btn_main_send_name);
         sendButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.button_main_edit:
-                Intent intentEdit = new Intent(view.getContext(), EditActivity.class);
+            case R.id.btn_main_edit:
+                Intent intentEdit = new Intent(MainActivity.this, EditActivity.class);
                 if (textName.getText() != null && textEmail.getText() != null &&
                         textPhone.getText() != null) {
                     intentEdit.putExtra(EditActivity.NAME, textName.getText());
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 startActivityForResult(intentEdit, PICK_INFO_REQUEST);
                 break;
-            case R.id.button_main_send_name:
+            case R.id.btn_main_send_name:
                 if (!textName.getText().equals("") && !textEmail.getText().equals("")) {
                     Intent intentSend = new Intent(Intent.ACTION_SEND);
                     intentSend.setType("text/plain");
@@ -72,13 +72,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 textName.setText("");
                 textEmail.setText("");
                 textPhone.setText("");
+                String message = "Canceled";
+                Toast.makeText(this,message,Toast.LENGTH_SHORT)
+                        .show();
             }
         }
         if (requestCode == PICK_RESULT_SENDING_REQUEST) {
             if (resultCode == RESULT_OK) {
                 String message = "Name sent";
-                Toast toast = Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT);
-                toast.show();
+                Toast.makeText(this, message, Toast.LENGTH_SHORT)
+                        .show();
             }
         }
     }
