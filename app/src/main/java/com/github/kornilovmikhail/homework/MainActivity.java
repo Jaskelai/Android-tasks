@@ -21,17 +21,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button editButton = (Button) findViewById(R.id.button_main_edit);
+        textName = findViewById(R.id.textview_main_name);
+        textEmail = findViewById(R.id.textview_main_email);
+        textPhone = findViewById(R.id.textView_main_phone);
+        Button editButton = findViewById(R.id.button_main_edit);
         editButton.setOnClickListener(this);
-        Button sendButton = (Button) findViewById(R.id.button_main_send_name);
+        Button sendButton = findViewById(R.id.button_main_send_name);
         sendButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        textName = (TextView) findViewById(R.id.textview_main_name);
-        textEmail = (TextView) findViewById(R.id.textview_main_email);
-        textPhone = (TextView) findViewById(R.id.textView_main_phone);
         switch (view.getId()) {
             case R.id.button_main_edit:
                 Intent intentEdit = new Intent(view.getContext(), EditActivity.class);

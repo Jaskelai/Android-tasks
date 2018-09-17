@@ -28,19 +28,19 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
-        editName = (EditText) findViewById(R.id.edittext_edit_name);
-        editEmail = (EditText) findViewById(R.id.edittext_edit_email);
-        editPhone = (EditText) findViewById(R.id.edittext_edit_phone);
-        textName = (TextView) findViewById(R.id.textview_main_name);
-        textEmail = (TextView) findViewById(R.id.textview_main_email);
-        textPhone = (TextView) findViewById(R.id.textView_main_phone);
+        editName = findViewById(R.id.edittext_edit_name);
+        editEmail = findViewById(R.id.edittext_edit_email);
+        editPhone = findViewById(R.id.edittext_edit_phone);
+        textName = findViewById(R.id.textview_main_name);
+        textEmail = findViewById(R.id.textview_main_email);
+        textPhone = findViewById(R.id.textView_main_phone);
         if (getIntent().getExtras() != null) {
             editName.setText(getIntent().getStringExtra(NAME));
             editEmail.setText(getIntent().getStringExtra(EMAIL));
             editPhone.setText(getIntent().getStringExtra(PHONE));
         }
-        Button buttonReset = (Button) findViewById(R.id.button_edit_cancel);
-        Button buttonSave = (Button) findViewById(R.id.button_edit_save);
+        Button buttonReset = findViewById(R.id.button_edit_cancel);
+        Button buttonSave = findViewById(R.id.button_edit_save);
         buttonReset.setOnClickListener(this);
         buttonSave.setOnClickListener(this);
     }
