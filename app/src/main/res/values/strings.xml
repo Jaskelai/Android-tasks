@@ -16,5 +16,20 @@
     <string name="main_email">Email:</string>
     <string name="main_phone">Phone:</string>
     <string name="main_send_name">Send name</string>
+    <string name="nav_info">Info</string>
+    <string name="nav_message">Message</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_email">Email</string>
+    <string name="nav_login">Login</string>
+    <string name="nav_login_hint">your login</string>
+    <string name="nav_email_hint">your email</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_info">Info</string>
+    <string name="fragment_message">Message</string>
+    <string name="profile_login">login</string>
+    <string name="profile_email">email</string>
+    <string name="btn_edit">Edit</string>
 
 </resources>
