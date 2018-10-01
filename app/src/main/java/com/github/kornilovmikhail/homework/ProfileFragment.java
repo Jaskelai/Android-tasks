@@ -40,9 +40,4 @@ public class ProfileFragment extends Fragment implements CallBack {
         tvEmail.setText(login);
         tvLogin.setText(email);
     }
-
-    public void save(String login, String email) {
-        tvLogin.setText(login);
-        tvEmail.setText(email);
-    }
 }

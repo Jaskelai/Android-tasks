@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements CallBack {
@@ -39,6 +40,9 @@ public class MainActivity extends AppCompatActivity implements CallBack {
         navigationView = findViewById(R.id.nav_view);
         selectDrawerItem(navigationView);
         transaction(infoFragment);
+        View headerView = navigationView.getHeaderView(0);
+        navLogin = headerView.findViewById(R.id.nav_login);
+        navEmail = headerView.findViewById(R.id.nav_email);
     }
 
     @Override
@@ -82,9 +86,6 @@ public class MainActivity extends AppCompatActivity implements CallBack {
 
     @Override
     public void callback(String login, String email) {
-        profileFragment.save(login, email);
-        navLogin = findViewById(R.id.nav_login);
-        navEmail = findViewById(R.id.nav_email);
         navLogin.setText(login);
         navEmail.setText(email);
     }
