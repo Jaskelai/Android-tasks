@@ -19,15 +19,19 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetHold
 
     private Callback callback;
 
+    public PlanetAdapter(Context context) {
+        callback = (Callback) context;
+    }
+
     public class PlanetHolder extends RecyclerView.ViewHolder {
         View item;
         ImageView imageView;
         TextView textView;
 
+
         public PlanetHolder(View v, Context context) {
             super(v);
             item = v;
-            callback = (Callback)context;
         }
 
         public void bind(String name, int image) {
@@ -50,12 +54,12 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetHold
     @Override
     public PlanetAdapter.PlanetHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
-        return new PlanetHolder(v,parent.getContext());
+        return new PlanetHolder(v, parent.getContext());
     }
 
     @Override
     public void onBindViewHolder(@NonNull PlanetHolder planetHolder, int i) {
-        planetHolder.bind(planets[i].getName(),planets[i].getImage());
+        planetHolder.bind(planets[i].getName(), planets[i].getImage());
     }
 
     @Override

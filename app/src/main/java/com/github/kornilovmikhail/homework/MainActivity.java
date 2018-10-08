@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements Callback {
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerView.Adapter adapter = new PlanetAdapter();
+        RecyclerView.Adapter adapter = new PlanetAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
