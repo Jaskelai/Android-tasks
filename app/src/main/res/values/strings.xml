@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Homework</string>
+    <string name="planet_name_tag">Name:</string>
+    <string name="planet_description_tag">Description:</string>
+    <string name="planet">Planet</string>
 
 </resources>
