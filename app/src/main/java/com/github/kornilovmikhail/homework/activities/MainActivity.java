@@ -33,13 +33,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
-                    case R.id.btn_name:
+                    case R.id.bnv_name:
                         transaction(textFragment);
                         break;
-                    case R.id.btn_cities:
+                    case R.id.bnv_cities:
                         transaction(citiesFragment);
                         break;
-                    case R.id.btn_facts:
+                    case R.id.bnv_facts:
                         transaction(travelContainerFragment);
                 }
                 return true;

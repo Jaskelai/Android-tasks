@@ -1,6 +1,5 @@
 package com.github.kornilovmikhail.homework.fragments;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -43,17 +42,16 @@ public class CitiesFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.tb_cities_sort_name:
+            case R.id.action_cities_sort_name:
                 adapter.updateCityList(CitiesRepository.sortByName());
                 recyclerView.scrollToPosition(0);
                 return true;
-            case R.id.tb_cities_sort_pop:
+            case R.id.action_cities_sort_pop:
                 adapter.updateCityList(CitiesRepository.sortByPopulation());
                 recyclerView.scrollToPosition(0);
                 return true;
         }
         return super.onOptionsItemSelected(item);
     }
-
 
 }

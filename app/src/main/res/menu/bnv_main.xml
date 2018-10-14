@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/btn_name"
+        android:id="@+id/bnv_name"
         android:icon="@drawable/ic_title_black_24dp"
         android:title="@string/bnv_name"/>
     <item
-        android:id="@+id/btn_cities"
+        android:id="@+id/bnv_cities"
         android:icon="@drawable/ic_list_black_24dp"
         android:title="@string/bnv_cities"/>
     <item
-        android:id="@+id/btn_facts"
+        android:id="@+id/bnv_facts"
         android:icon="@drawable/ic_info_black_24dp"
         android:title="@string/bnv_tabs"/>
 </menu>

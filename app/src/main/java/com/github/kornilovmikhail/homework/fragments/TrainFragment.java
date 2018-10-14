@@ -12,12 +12,12 @@ import com.github.kornilovmikhail.homework.R;
 
 public class TrainFragment extends Fragment {
 
-    public static final String NUM_KEY = "num_key";
+    public static final String KEY_NAME = "key_name";
 
     public static TrainFragment newInstance(String name) {
         TrainFragment trainFragment = new TrainFragment();
         Bundle args = new Bundle();
-        args.putString(NUM_KEY, name);
+        args.putString(KEY_NAME, name);
         trainFragment.setArguments(args);
         return trainFragment;
     }
@@ -27,9 +27,8 @@ public class TrainFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_train, container, false);
         TextView tvTrain = v.findViewById(R.id.tv_fragment_train);
-        tvTrain.setText(getArguments().getString(NUM_KEY));
+        tvTrain.setText(getArguments().getString(KEY_NAME));
         return v;
     }
-
 
 }

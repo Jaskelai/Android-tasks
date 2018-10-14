@@ -9,9 +9,6 @@ import java.util.List;
 public class CityDiffUtilCallBack extends DiffUtil.Callback {
     private List<City> oldList;
     private List<City> newList;
-    private final String NAME_KEY = "name_key";
-    private final String PHOTO_KEY = "photo_key";
-    private final String POPULATION_KEY = "population_key";
 
     public CityDiffUtilCallBack(List<City> oldList, List<City> newList) {
         this.oldList = oldList;
@@ -37,9 +34,5 @@ public class CityDiffUtilCallBack extends DiffUtil.Callback {
     public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
         return newList.get(newItemPosition).equals(oldList.get(oldItemPosition));
     }
-
-    @Override
-    public Object getChangePayload(int oldItemPosition, int newItemPosition) {
-        return super.getChangePayload(oldItemPosition, newItemPosition);
-    }
+    
 }

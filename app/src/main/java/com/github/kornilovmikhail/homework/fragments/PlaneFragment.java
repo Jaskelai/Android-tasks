@@ -11,12 +11,12 @@ import com.github.kornilovmikhail.homework.R;
 
 public class PlaneFragment extends Fragment {
 
-    public static final String NUM_KEY = "num_key";
+    public static final String KEY_NAME = "key_name";
 
     public static PlaneFragment newInstance(String name) {
         PlaneFragment planeFragment = new PlaneFragment();
         Bundle args = new Bundle();
-        args.putString(NUM_KEY, name);
+        args.putString(KEY_NAME, name);
         planeFragment.setArguments(args);
         return planeFragment;
     }
@@ -26,7 +26,7 @@ public class PlaneFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_plane, container, false);
         TextView tvPlane = v.findViewById(R.id.tv_fragment_plane);
-        tvPlane.setText(getArguments().getString(NUM_KEY));
+        tvPlane.setText(getArguments().getString(KEY_NAME));
         return v;
     }
 }

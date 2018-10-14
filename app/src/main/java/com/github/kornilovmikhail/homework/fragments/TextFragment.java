@@ -9,11 +9,7 @@ import android.view.ViewGroup;
 
 import com.github.kornilovmikhail.homework.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class TextFragment extends Fragment {
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

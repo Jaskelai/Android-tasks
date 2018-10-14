@@ -1,6 +1,5 @@
 package com.github.kornilovmikhail.homework.fragments;
 
-
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
@@ -14,7 +13,6 @@ import com.github.kornilovmikhail.homework.R;
 import com.github.kornilovmikhail.homework.adapters.InfoFragmentPagerAdapter;
 
 public class TravelContainerFragment extends Fragment {
-
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,

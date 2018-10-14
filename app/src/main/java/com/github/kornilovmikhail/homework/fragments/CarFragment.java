@@ -11,23 +11,22 @@ import com.github.kornilovmikhail.homework.R;
 
 public class CarFragment extends Fragment {
 
-    public static final String NUM_KEY = "num_key";
+    public static final String KEY_NAME = "key_name";
 
     public static CarFragment newInstance(String name) {
         CarFragment carFragment = new CarFragment();
         Bundle args = new Bundle();
-        args.putString(NUM_KEY, name);
+        args.putString(KEY_NAME, name);
         carFragment.setArguments(args);
         return carFragment;
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_car, container, false);
         TextView tvCar = v.findViewById(R.id.tv_fragment_car);
-        tvCar.setText(getArguments().getString(NUM_KEY));
+        tvCar.setText(getArguments().getString(KEY_NAME));
         return v;
     }
 }
