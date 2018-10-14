@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Homework</string>
+    <string name="bnv_name">Name</string>
+    <string name="bnv_cities">Cities</string>
+    <string name="bnv_tabs">Tabs</string>
+    
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_text_cities">Cities</string>
+    <string name="card_citizens">citizens</string>
+    <string name="sort_name">sort by name</string>
+    <string name="sort_pop">sort by population</string>
 
 </resources>
