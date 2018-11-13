@@ -21,7 +21,6 @@ public class AudioService extends Service {
         }
     }
 
-
     public void updateState(List<Track> tracks, int position) {
         this.tracks = tracks;
         this.position = position;
@@ -32,7 +31,7 @@ public class AudioService extends Service {
             } else {
                 this.position++;
             }
-            mediaPlayer = MediaPlayer.create(this,this.tracks.get(this.position).getId());
+            mediaPlayer = MediaPlayer.create(this, this.tracks.get(this.position).getId());
         });
     }
 

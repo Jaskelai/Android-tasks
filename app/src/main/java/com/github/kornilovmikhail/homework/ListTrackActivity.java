@@ -12,7 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class ListTrackActivity extends AppCompatActivity implements Callback,SharedPreferences.OnSharedPreferenceChangeListener {
+public class ListTrackActivity extends AppCompatActivity implements Callback, SharedPreferences.OnSharedPreferenceChangeListener {
 
     public static final String INTENT_CODE_POSITION = "Position";
 
@@ -24,7 +24,7 @@ public class ListTrackActivity extends AppCompatActivity implements Callback,Sha
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerView.Adapter adapter = new TrackAdapter(this);
+        RecyclerView.Adapter adapter = new TrackAdapter(new TracksRepository(this).getTracks(), this);
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         Toolbar myToolbar = findViewById(R.id.toolbar);
@@ -36,7 +36,7 @@ public class ListTrackActivity extends AppCompatActivity implements Callback,Sha
 
     @Override
     public void callback(int position) {
-        Intent intent = new Intent(ListTrackActivity.this,MusicPlayerActivity.class);
+        Intent intent = new Intent(ListTrackActivity.this, MusicPlayerActivity.class);
         intent.putExtra(INTENT_CODE_POSITION, position);
         startActivity(intent);
     }
@@ -50,8 +50,8 @@ public class ListTrackActivity extends AppCompatActivity implements Callback,Sha
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_settings:
-                Intent intent = new Intent(ListTrackActivity.this,SettingsActivity.class);
-                startActivity(intent);
+                getSupportFragmentManager().beginTransaction()
+                .replace(R.id.main_container, new SettingsFragment()).commit();
                 return true;
         }
         return false;

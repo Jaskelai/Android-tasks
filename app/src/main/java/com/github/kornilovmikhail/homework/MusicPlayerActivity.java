@@ -19,11 +19,11 @@ public class MusicPlayerActivity extends AppCompatActivity implements View.OnCli
     private ImageButton prevButton;
     private ImageButton pauseButton;
     private ImageButton nextButton;
-    private boolean isPlaying;
-    private int position;
+    private TextView tvNameTrack;
     private AudioService audioService;
     private List<Track> tracks;
-    private TextView tvNameTrack;
+    private boolean isPlaying;
+    private int position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +69,7 @@ public class MusicPlayerActivity extends AppCompatActivity implements View.OnCli
             position--;
         }
         tvNameTrack.setText(tracks.get(position).getName());
-        audioService.updateState(tracks,position);
+        audioService.updateState(tracks, position);
         if (isPlaying) {
             audioService.pausePlayTrack();
         }
@@ -100,7 +100,7 @@ public class MusicPlayerActivity extends AppCompatActivity implements View.OnCli
             position++;
         }
         tvNameTrack.setText(tracks.get(position).getName());
-        audioService.updateState(tracks,position);
+        audioService.updateState(tracks, position);
         if (isPlaying) {
             audioService.pausePlayTrack();
         }

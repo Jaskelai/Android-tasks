@@ -1,6 +1,5 @@
 package com.github.kornilovmikhail.homework;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,16 +14,14 @@ public class TrackAdapter extends RecyclerView.Adapter<TrackAdapter.TrackHolder>
     private List<Track> tracks;
     private Callback callback;
 
-    public TrackAdapter(Context context) {
-        callback = (Callback) context;
-        tracks = new TracksRepository(context).getTracks();
+    public TrackAdapter(List<Track> tracks, Callback callback) {
+        this.callback = callback;
+        this.tracks = tracks;
     }
-
 
     public class TrackHolder extends RecyclerView.ViewHolder {
 
         private View itemView;
-
 
         public TrackHolder(@NonNull View itemView) {
             super(itemView);
