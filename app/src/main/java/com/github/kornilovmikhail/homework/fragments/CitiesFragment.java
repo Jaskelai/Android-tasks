@@ -79,17 +79,16 @@ public class CitiesFragment extends Fragment {
 
     public void sortCityList(List<City> oldCities, Comparator<City> comparator) {
         Flowable.fromIterable(oldCities)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
                 .take(12)
                 .sorted(comparator)
                 .map(s -> new City(s.getName().concat(String.valueOf(s.getName().length())),
                         s.getPopulation(), s.getPhoto(), s.getId()))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(this::showLoading)
                 .toList()
-                .doOnSuccess(newCities -> adapter.updateCityList(newCities))
                 .doAfterTerminate(this::hideLoading)
-                .subscribe();
+                .subscribe(newCities -> adapter.updateCityList(newCities));
     }
 
     private void showLoading(Subscription subscription) {
